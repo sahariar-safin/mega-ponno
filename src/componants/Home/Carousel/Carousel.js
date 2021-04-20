@@ -10,7 +10,6 @@ const Carousel = () => {
             .then(function (response) {
                 const data = response.data;
                 setBanners(data)
-                console.log(data);
             })
             .catch(function (error) {
                 // handle error
