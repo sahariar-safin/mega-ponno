@@ -18,7 +18,7 @@ const Carousel = () => {
             .then(function () {
                 // always executed
             });
-    }, [banners])
+    }, [])
 
     return (
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">

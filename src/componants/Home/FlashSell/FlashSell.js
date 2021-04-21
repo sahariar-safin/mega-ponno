@@ -25,7 +25,7 @@ const FlashSell = () => {
             .then(function () {
                 // always executed
             });
-    }, [flashSellsProducts])
+    }, [])
 
     const windowsWidth = window.screen.width;
     return (

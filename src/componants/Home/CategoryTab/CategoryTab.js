@@ -55,7 +55,7 @@ const CategoryTab = () => {
     const classes = useStyles();
     const [value, setValue] = useState(0);
     const [index, setIndex] = useState(0);
-    const [categorySelected, setCategorySelected] = useState("Food");
+    const [categorySelected, setCategorySelected] = useState("FOOD");
 
     const handleChange = (event, newValue) => {
         const selectedCategory = event.target.innerText;
