@@ -3,17 +3,23 @@ import React from 'react';
 import { useContext } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { Route } from 'react-router';
 import { CartContext } from '../../../App';
 import Footer from '../../Sheared/Footer/Footer';
 import Navbar from '../../Sheared/Navbar/Navbar';
 import CartProducts from '../CartProducts/CartProducts';
+import Order from '../Order/Order';
 
 const Cart = () => {
     const [cart, setCart] = useContext(CartContext);
     const [cartProducts, setCartProducts] = useState([]);
+    const [total, setTotal] = useState(0);
+    const [orderProducts, setOrderProducts] = useState({
+        product: cart
+    });
 
     useEffect(() => {
-        axios.post('http://localhost:5000/cartProducts', cart)
+        axios.post('https://frozen-fjord-85553.herokuapp.com/cartProducts', cart)
             .then(function (response) {
                 const data = response.data;
                 setCartProducts(data);
@@ -22,11 +28,18 @@ const Cart = () => {
                 console.log(error);
             });
     }, [])
+
     return (
         <div>
             <Navbar></Navbar>
-            <h1 className="text-center"> Shopping Cart</h1>
-            <CartProducts products={cartProducts}></CartProducts>
+
+            <Route path="/cart">
+                <CartProducts orderProducts={orderProducts} setOrderProducts={setOrderProducts} setTotal={setTotal} products={cartProducts}></CartProducts>
+            </Route>
+            <Route path="/order">
+                <Order orderProducts={orderProducts} total={total}></Order>
+            </Route>
+
             <Footer></Footer>
         </div>
     );

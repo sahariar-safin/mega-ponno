@@ -12,7 +12,7 @@ const Product = () => {
     const { id } = useParams();
     const [product, setProduct] = useState([]);
     useEffect(() => {
-        axios.get(`http://localhost:5000/product?id=${ id }`)
+        axios.get(`https://frozen-fjord-85553.herokuapp.com/product?id=${ id }`)
             .then(function (response) {
                 const data = response.data;
                 setProduct(data);

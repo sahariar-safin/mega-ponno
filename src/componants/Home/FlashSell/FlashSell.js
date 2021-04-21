@@ -13,7 +13,7 @@ const FlashSell = () => {
     const [flashSellsProducts, setFlashSellProducts] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/flashSell')
+        axios.get('https://frozen-fjord-85553.herokuapp.com/flashSell')
             .then(function (response) {
                 const data = response.data;
                 setFlashSellProducts(data);

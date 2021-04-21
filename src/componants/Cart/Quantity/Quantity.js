@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-const Quantity = ({ price, setCurrentPrice, currentPrice }) => {
+const Quantity = ({ price }) => {
     const [cartQuantity, setCartQuantity] = useState({
         quantity: 1
     })
@@ -18,7 +18,7 @@ const Quantity = ({ price, setCurrentPrice, currentPrice }) => {
                                 });
                         }
                     }} className="btn btn-light">-</button>
-                    <p className="m-2">{cartQuantity.quantity}</p>
+                    <p id="quantity" className="m-2">{cartQuantity.quantity}</p>
                     <button onClick={() => {
                         setCartQuantity({
                             quantity: cartQuantity.quantity + 1

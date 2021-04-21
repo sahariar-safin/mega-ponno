@@ -9,7 +9,7 @@ const Products = ({ value, categorySelected, index }) => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        axios.post('http://localhost:5000/categorizedProducts', { categorySelected })
+        axios.post('https://frozen-fjord-85553.herokuapp.com/categorizedProducts', { categorySelected })
             .then(function (response) {
                 const data = response.data;
                 setProducts(data);

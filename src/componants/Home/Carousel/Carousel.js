@@ -6,7 +6,7 @@ const Carousel = () => {
     const [banners, setBanners] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/banners')
+        axios.get('https://frozen-fjord-85553.herokuapp.com/banners')
             .then(function (response) {
                 const data = response.data;
                 setBanners(data)

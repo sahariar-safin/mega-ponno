@@ -24,6 +24,9 @@ function App() {
           <Route path='/cart'>
             <Cart></Cart>
           </Route>
+          <Route path='/order'>
+            <Cart></Cart>
+          </Route>
           <Route exact path='/'>
             <Home></Home>
           </Route>
