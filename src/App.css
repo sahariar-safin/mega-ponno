@@ -1,3 +1,22 @@
-.MuiTabs-flexContainer{
+.MuiTabs-flexContainer {
   justify-content: center;
+}
+
+.first-Banner {
+  background-color: rgb(210, 83, 54);
+}
+
+.secound-Banner {
+  background-color: rgb(86, 84, 92);
+}
+
+@media (max-width: 767.98px) {
+  .productCard {
+    width: 15rem !important;
+  }
+}
+@media (max-width: 767.98px) {
+  .searchForm {
+    width: 45% !important;
+  }
 }

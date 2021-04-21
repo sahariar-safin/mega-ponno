@@ -9,6 +9,7 @@ import { createContext, useState } from 'react';
 import Home from "./componants/Home/Home/Home";
 import Product from "./componants/Product/Product/Product";
 import Cart from "./componants/Cart/Cart/Cart";
+import Order from "./componants/Cart/Order/Order";
 
 export const CartContext = createContext();
 
