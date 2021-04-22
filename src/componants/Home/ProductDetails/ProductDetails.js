@@ -23,11 +23,19 @@ const ProductDetails = ({ product }) => {
             history.push("/cart");
         }
     }
-
-    console.log(cart);
+    const handleOrderNow = (id) => {
+        if (cart.find(element => element === id)) {
+            alert("This item already added in your cart!")
+        } else {
+            const newCart = [...cart];
+            newCart.push(id)
+            setCart(newCart)
+            history.push('/cart')
+        }
+    }
     return (
         <div className="container">
-            <div style={{ height: "550px", }} className="row align-items-center productDetails">
+            <div style={{ height: "550px", marginTop: "25px" }} className="row align-items-center productDetails">
                 <div className="col-md-4 col-sm-12 col-xs-12">
                     <Carousel>
                         {
@@ -37,15 +45,14 @@ const ProductDetails = ({ product }) => {
                                 </div>)
                         }
                     </Carousel>
-
                 </div>
                 <div className="col-md-4 col-sm-12 col-xs-12">
                     <h3>{product.name}</h3>
                     <h6 style={{ margin: "20px 0px" }}>Product Code: <strong>{product.productID}</strong></h6>
                     <h2><strong>Tk. {product.price}</strong></h2>
-                    <div className="d-flex flex-wrap justify-content-start">
+                    <div className="d-flex flex-wrap justify-content-start mb-5">
                         <button onClick={() => handleAddCart(`${ product.productID }`)} className="btn btn-primary">Add to cart</button>
-                        <button className="btn btn-warning ms-3">Order now</button>
+                        <button onClick={() => handleOrderNow(`${ product.productID }`)} className="btn btn-warning ms-3">Order now</button>
                     </div>
                 </div>
                 <div className="col-md-4 col-sm-12 col-xs-12">

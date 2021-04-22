@@ -3,6 +3,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import ItemsCarousel from 'react-items-carousel';
+import { Link } from 'react-router-dom';
 import ProductCard from '../ProductCard/ProductCard';
 
 const FlashSell = () => {
@@ -30,7 +31,13 @@ const FlashSell = () => {
     const windowsWidth = window.screen.width;
     return (
         <div style={{ marginTop: "30px" }} className='container-fluid row'>
-            <h1 style={{ marginBottom: "30px" }}>Flash Sell</h1>
+            <div className="container-fluid mb-4 row d-flex justify-content-between">
+                <h1 style={{ marginBottom: "30px", display: 'contents' }}>Flash Sell</h1>
+                <Link style={{ width: "100px" }} to="/flashsells">
+                    <button className="btn btn-primary">See all</button>
+                </Link>
+            </div>
+
             <div style={{ padding: `0 ${ chevronWidth }px` }}>
                 <ItemsCarousel
                     requestToChangeActive={setActiveItemIndex}

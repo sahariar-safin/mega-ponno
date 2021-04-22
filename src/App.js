@@ -10,6 +10,7 @@ import Home from "./componants/Home/Home/Home";
 import Product from "./componants/Home/Product/Product";
 import Cart from "./componants/Cart/Cart/Cart";
 import Order from "./componants/Cart/Order/Order";
+import AllFlashSellProducts from "./componants/Home/AllFlashSellProducts/AllFlashSellProducts";
 
 export const CartContext = createContext();
 
@@ -24,6 +25,9 @@ function App() {
           </Route>
           <Route path='/cart'>
             <Cart></Cart>
+          </Route>
+          <Route path='/flashsells'>
+            <AllFlashSellProducts></AllFlashSellProducts>
           </Route>
           <Route path='/order'>
             <Cart></Cart>

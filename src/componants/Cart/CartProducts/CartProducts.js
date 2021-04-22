@@ -44,7 +44,7 @@ const CartProducts = ({ products, setTotal, setOrderProducts, orderProducts }) =
                 <tbody>
                     {
                         products.map(product => <tr>
-                            <th scope="row"><img style={{ height: '200px', width: "200px", margin: 'auto' }} className="img-fluid" src={`data:image/jpeg;base64,${ product.imgData.img }`} alt="" /></th>
+                            <th scope="row"><img style={{ height: '200px', width: "200px", margin: 'auto' }} className="img-fluid" src={`data:image/jpeg;base64,${ product.imgData.img[0] }`} alt="" /></th>
                             <td>{product.name}</td>
                             <td>Tk. {product.price}</td>
                             <Quantity price={product.price}></Quantity>
