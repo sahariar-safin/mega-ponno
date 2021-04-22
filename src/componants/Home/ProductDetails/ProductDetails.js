@@ -7,6 +7,8 @@ import { useHistory } from 'react-router';
 import { CartContext } from '../../../App';
 import FlashSell from '../../Home/FlashSell/FlashSell';
 import './ProductDetails.css';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Carousel } from 'react-responsive-carousel';
 
 const ProductDetails = ({ product }) => {
     const [cart, setCart] = useContext(CartContext);
@@ -25,9 +27,17 @@ const ProductDetails = ({ product }) => {
     console.log(cart);
     return (
         <div className="container">
-            <div style={{ height: "500px", }} className="row align-items-center productDetails">
+            <div style={{ height: "550px", }} className="row align-items-center productDetails">
                 <div className="col-md-4 col-sm-12 col-xs-12">
-                    <img className="img-fluid" src={`data:image/jpeg;base64,${ product.imgData.img }`} alt="" />
+                    <Carousel>
+                        {
+                            product.imgData.img.map(img =>
+                                <div>
+                                    <img className="img-fluid" src={`data:image/jpeg;base64,${ img }`} alt="" />
+                                </div>)
+                        }
+                    </Carousel>
+
                 </div>
                 <div className="col-md-4 col-sm-12 col-xs-12">
                     <h3>{product.name}</h3>

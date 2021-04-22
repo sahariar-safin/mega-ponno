@@ -28,7 +28,7 @@ const ProductCard = ({ product }) => {
     }
     return (
         <div class="productCard card" style={{ width: "18rem", marginBottom: "15px" }}>
-            <img onClick={() => history.push(`/product/${ product.productID }`)} style={{ height: "300px" }} src={`data:image/jpeg;base64,${ product.imgData.img }`} class="card-img-top img-fluid" alt="..." />
+            <img onClick={() => history.push(`/product/${ product.productID }`)} style={{ height: "300px" }} src={`data:image/jpeg;base64,${ product.imgData.img[0] }`} class="card-img-top img-fluid" alt="..." />
             <div onClick={() => history.push(`/product/${ product.productID }`)} class="card-body">
                 <h5 class="card-title">{product.name}</h5>
                 <p class="card-text"><strong>Tk. {product.price}</strong></p>
