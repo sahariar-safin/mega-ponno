@@ -3,7 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useHistory, useParams } from 'react-router';
-import FlashSell from '../../Home/FlashSell/FlashSell';
+import FlashSell from '../FlashSell/FlashSell';
 import Footer from '../../Sheared/Footer/Footer';
 import Navbar from '../../Sheared/Navbar/Navbar';
 import ProductDetails from '../ProductDetails/ProductDetails';

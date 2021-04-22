@@ -21,7 +21,7 @@ const Products = ({ value, categorySelected, index }) => {
     return (
         <TabPanel index={index} value={value}>
             <h1 className="text-center">{categorySelected}</h1>
-            <div className="container row ms-auto me-auto">
+            <div className="products container row ms-auto me-auto">
                 <div className="d-flex flex-wrap justify-content-evenly">
                     {
                         products.map(product => <ProductCard product={product}></ProductCard>)

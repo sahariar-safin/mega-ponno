@@ -35,7 +35,7 @@ const FlashSell = () => {
                 <ItemsCarousel
                     requestToChangeActive={setActiveItemIndex}
                     activeItemIndex={activeItemIndex}
-                    numberOfCards={windowsWidth > 1088 ? 5 : (windowsWidth > 690 ? 3 : (windowsWidth > 300 ? 1 : 1))}
+                    numberOfCards={windowsWidth > 992 ? 5 : (windowsWidth > 768 ? 3 : (windowsWidth > 576 ? 2 : 2))}
                     infiniteLoop={true}
                     gutter={20}
                     leftChevron={<button className="btn btn-success">{'<'}</button>}
