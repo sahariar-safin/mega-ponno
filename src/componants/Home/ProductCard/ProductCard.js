@@ -1,5 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
+import Skeleton from 'react-loading-skeleton';
 import { useHistory } from 'react-router';
 import { CartContext } from '../../../App';
 
@@ -30,14 +31,14 @@ const ProductCard = ({ product }) => {
         <div class="productCard card" style={{ width: "18rem", marginBottom: "15px" }}>
             <img onClick={() => history.push(`/product/${ product.productID }`)} style={{ height: "300px" }} src={`data:image/jpeg;base64,${ product.imgData.img[0] }`} class="card-img-top img-fluid" alt="..." />
             <div onClick={() => history.push(`/product/${ product.productID }`)} class="card-body">
-                <h5 class="card-title">{product.name}</h5>
-                <p class="card-text"><strong>Tk. {product.price}</strong></p>
+                <h5 class="card-title">{product.name || <Skeleton delay={3} />}</h5>
+                <p class="card-text"> {product.originalPrice > 0 && <small><s>Tk. {product.originalPrice}</s></small>} <strong>Tk. {product.price || <Skeleton count={5} />}</strong></p>
             </div>
             <div className="mb-2 d-flex flex-wrap justify-content-evenly">
                 <a onClick={() => handleAddCart(`${ product.productID }`)} class="btn btn-primary">Add to Cart</a>
                 <a onClick={() => handleOrderNow(`${ product.productID }`)} class="btn btn-warning">Order Now</a>
             </div>
-        </div>
+        </div >
     );
 };
 

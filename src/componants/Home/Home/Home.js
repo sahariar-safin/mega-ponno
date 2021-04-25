@@ -1,17 +1,24 @@
-import React from 'react';
-import Carousel from '../Carousel/Carousel';
-import FlashSell from '../FlashSell/FlashSell';
+import React, { Suspense } from 'react';
 import Navbar from '../../Sheared/Navbar/Navbar';
-import CategoryTab from '../CategoryTab/CategoryTab';
 import Footer from '../../Sheared/Footer/Footer';
+import { lazy } from 'react';
+
+
+const Carousel = lazy(() => import('../Carousel/Carousel'))
+const FlashSell = lazy(() => import('../FlashSell/FlashSell'))
+const CategoryTab = lazy(() => import('../CategoryTab/CategoryTab'))
 
 const Home = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <Carousel></Carousel>
-            <FlashSell></FlashSell>
-            <CategoryTab></CategoryTab>
+            <Suspense fallback={<div>Loading...</div>}>
+                <>
+                    <Carousel></Carousel>
+                    <FlashSell></FlashSell>
+                    <CategoryTab></CategoryTab>
+                </>
+            </Suspense>
             <Footer></Footer>
         </div>
     );

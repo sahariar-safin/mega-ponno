@@ -11,6 +11,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 
 const ProductDetails = ({ product }) => {
+    console.log(product);
     const [cart, setCart] = useContext(CartContext);
     const history = useHistory();
     const handleAddCart = (id) => {
@@ -49,7 +50,7 @@ const ProductDetails = ({ product }) => {
                 <div className="col-md-4 col-sm-12 col-xs-12">
                     <h3>{product.name}</h3>
                     <h6 style={{ margin: "20px 0px" }}>Product Code: <strong>{product.productID}</strong></h6>
-                    <h2><strong>Tk. {product.price}</strong></h2>
+                    <h2>  {product.originalPrice > 0 && <small><s>Tk. {product.originalPrice}</s></small>} <strong>Tk. {product.price}</strong></h2>
                     <div className="d-flex flex-wrap justify-content-start mb-5">
                         <button onClick={() => handleAddCart(`${ product.productID }`)} className="btn btn-primary">Add to cart</button>
                         <button onClick={() => handleOrderNow(`${ product.productID }`)} className="btn btn-warning ms-3">Order now</button>
