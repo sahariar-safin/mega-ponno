@@ -34,7 +34,7 @@ const Cart = () => {
             <Navbar></Navbar>
 
             <Route path="/cart">
-                <CartProducts orderProducts={orderProducts} setOrderProducts={setOrderProducts} setTotal={setTotal} products={cartProducts}></CartProducts>
+                <CartProducts cart={cart} orderProducts={orderProducts} setOrderProducts={setOrderProducts} setTotal={setTotal} products={cartProducts}></CartProducts>
             </Route>
             <Route path="/order">
                 <Order orderProducts={orderProducts} total={total}></Order>

@@ -5,7 +5,7 @@ import { useHistory } from 'react-router';
 import Quantity from '../Quantity/Quantity';
 
 
-const CartProducts = ({ products, setTotal, setOrderProducts, orderProducts }) => {
+const CartProducts = ({ cart, products, setTotal, setOrderProducts, orderProducts }) => {
     const history = useHistory();
     const handleOrder = () => {
         const number = document.querySelectorAll("#price");
@@ -45,7 +45,7 @@ const CartProducts = ({ products, setTotal, setOrderProducts, orderProducts }) =
                             </tr>
 
                             : <tr>
-                                <th>Lading..</th>
+                                <th></th>
                             </tr>
                     }
                 </thead>
@@ -57,17 +57,20 @@ const CartProducts = ({ products, setTotal, setOrderProducts, orderProducts }) =
                             <td>Tk. {product.price}</td>
                             <Quantity price={product.price}></Quantity>
                         </tr>)
-                        : <ContentLoader
-                            viewBox="0 0 400 160"
-                            height={160}
-                            width={400}
-                            backgroundColor="transparent"
-                            className=""
-                        >
-                            <circle cx="150" cy="86" r="8" />
-                            <circle cx="194" cy="86" r="8" />
-                            <circle cx="238" cy="86" r="8" />
-                        </ContentLoader>
+                        : (
+                            cart.length > 0 &&
+                            <ContentLoader
+                                viewBox="0 0 400 160"
+                                height={160}
+                                width={400}
+                                backgroundColor="transparent"
+                                className=""
+                            >
+                                <circle cx="150" cy="86" r="8" />
+                                <circle cx="194" cy="86" r="8" />
+                                <circle cx="238" cy="86" r="8" />
+                            </ContentLoader>
+                        )
                     }
                     <tr>
                         <td colspan="5" align="right"><button onClick={handleOrder} className="btn btn-success">Checkout Now</button></td>
