@@ -11,7 +11,7 @@ import ContentLoader from "react-content-loader"
 const FlashSell = () => {
 
     const [activeItemIndex, setActiveItemIndex] = useState(0);
-    const chevronWidth = 40;
+    const chevronWidth = 22;
 
     const [flashSellsProducts, setFlashSellProducts] = useState([]);
 
